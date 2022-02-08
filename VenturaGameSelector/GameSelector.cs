@@ -87,11 +87,11 @@ namespace GameSelectorStarter
         {
             // FIXME -- only the Strategy and Diplomacy entries
             // are correct; the others need their own class
-            gameCriteria.Add(GameGenre.Luck.ToString(), new StrategySet());
+            gameCriteria.Add(GameGenre.Luck.ToString(), new LuckSet());
             gameCriteria.Add(GameGenre.Strategy.ToString(), new StrategySet());
             gameCriteria.Add(GameGenre.Diplomacy.ToString(), new DiplomacySet());
-            gameCriteria.Add(GameGenre.Knowledge.ToString(), new StrategySet());
-            gameCriteria.Add(GameGenre.Dexterity.ToString(), new DiplomacySet());
+            gameCriteria.Add(GameGenre.Knowledge.ToString(), new KnowledgeSet());
+            gameCriteria.Add(GameGenre.Dexterity.ToString(), new DexteritySet());
         }
 
         private void AddMedia()
