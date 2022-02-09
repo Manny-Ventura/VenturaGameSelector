@@ -18,6 +18,12 @@ namespace GameSelectorStarter
         Board,
         Computer
     }
+    public enum GameDifficulty
+    {
+        Low,
+        Medium,
+        High
+    }
 
     public static class GameGenreExtension
     {
