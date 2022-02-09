@@ -31,4 +31,16 @@ namespace GameSelectorStarter
             return genre;
         }
     }
+    public static class GameMediaExtension
+    {
+        static public GameMedia ConvertFromString(this GameMedia media, string name)
+        {
+            foreach (GameMedia g in Enum.GetValues( typeof(GameMedia)))
+            {
+                if (name.Equals(g.ToString(), StringComparison.CurrentCultureIgnoreCase))
+                    return g;
+            }
+            return media;
+        }
+    }
 }

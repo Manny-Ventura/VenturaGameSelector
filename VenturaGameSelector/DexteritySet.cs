@@ -10,7 +10,7 @@ namespace GameSelectorStarter
     {
         public override void AddIfFitsCriteria(Game game)
         {
-            if (game.GenreList.Contains(GameGenre.Strategy))
+            if (game.GenreList.Contains(GameGenre.Dexterity))
             {
                 base.AddIfFitsCriteria(game);
             }

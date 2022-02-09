@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GameSelectorStarter
 {
-    class LuckSet : GameSet
+    class CardMedia : GameSet
     {
         public override void AddIfFitsCriteria(Game game)
         {
-            if (game.GenreList.Contains(GameGenre.Luck))
+            if (game.Media.Equals(GameMedia.Card))
             {
                 base.AddIfFitsCriteria(game);
             }

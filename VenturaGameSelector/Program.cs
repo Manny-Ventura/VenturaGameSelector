@@ -10,7 +10,7 @@ namespace GameSelectorStarter
     {
         static void Main(string[] args)
         {
-            GameSelectorConsole selector = new GameSelectorConsole("h:/data-files/cpt-244/ShortGameList.txt");
+            GameSelectorConsole selector = new GameSelectorConsole("C:/Users/Fuzz/Desktop/GameList.txt");
             selector.SelectGame();
             Console.WriteLine("\nDone");
             Console.ReadLine();

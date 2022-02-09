@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GameSelectorStarter
 {
-    class LuckSet : GameSet
+    class BoardMedia : GameSet
     {
         public override void AddIfFitsCriteria(Game game)
         {
-            if (game.GenreList.Contains(GameGenre.Luck))
+            if (game.Media.Equals(GameMedia.Board))
             {
                 base.AddIfFitsCriteria(game);
             }

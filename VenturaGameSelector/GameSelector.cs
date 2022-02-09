@@ -97,6 +97,9 @@ namespace GameSelectorStarter
         private void AddMedia()
         {
             // TODO -- add media
+            gameCriteria.Add(GameMedia.Card.ToString(), new CardMedia());
+            gameCriteria.Add(GameMedia.Board.ToString(), new BoardMedia());
+            gameCriteria.Add(GameMedia.Computer.ToString(), new ComputerMedia());
         }
 
         // TODO, add methods, if needed, for dificulty, time, num players, etc.
