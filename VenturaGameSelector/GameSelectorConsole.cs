@@ -22,7 +22,7 @@ namespace GameSelectorStarter
                 DisplayGames(selector.RetrieveCurrentMatches());
             }
         }
-
+        //Options at beginning of program!!!!->
         private bool GetUserCriteria()
         {
             char selection = GetCriteriaSelected();
@@ -36,6 +36,14 @@ namespace GameSelectorStarter
                 case 'C':
                 {
                     ClearSelections();
+                } break;
+                case 'D':
+                {
+                    //Difficulty
+                } break;
+                case 'M':
+                {
+                    UpdateMediaCriteria();
                 } break;
                 case 'Q':
                 {
@@ -111,6 +119,34 @@ namespace GameSelectorStarter
                     // nothing to do;
                 } break;
             }
+        }
+        private void UpdateMediaCriteria()
+        {
+            char selection = GetMediaSelection();
+            switch (selection)
+            {
+                case 'B':
+                {
+                    selector.AddMediaCriteria(GameMedia.Board);
+                } break;
+                case 'A':
+                {
+                    selector.AddMediaCriteria(GameMedia.Card);
+                } break;
+                case 'O':
+                {
+                    selector.AddMediaCriteria(GameMedia.Computer);
+                } break;
+            }
+        }
+        private char GetMediaSelection()
+        {
+            string instructions = "Which media criteria you would like to add?";
+            string menu = "B) Board\n"
+                        + "A) Card\n"
+                        + "O) Computer\n";
+            string values = "BAO";
+            return GetValidatedSelection(instructions, menu, values);
         }
 
         private char GetUpdateActionSelection()

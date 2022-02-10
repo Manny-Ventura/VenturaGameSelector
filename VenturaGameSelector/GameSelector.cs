@@ -10,11 +10,12 @@ namespace GameSelectorStarter
         private Dictionary<string, GameSet> gameCriteria = new Dictionary<string, GameSet>();
 
         private List<GameSet> currentGenreList = new List<GameSet>();
+        private GameMedia media = new GameMedia();
 
         public GameSelector(string filename)
         {
             LoadGameInfo(filename);
-            BuildMasterCriteria();
+            BuildMa terCriteria();
         }
 
         private void LoadGameInfo(string filename)
@@ -106,15 +107,17 @@ namespace GameSelectorStarter
 
         public GameSet RetrieveCurrentMatches()
         {
-                GameSet genreSet = new GameSet();
-                GameSet currentMatches = new GameSet();
-                currentMatches.UnionWith(AllGames);
+            GameSet genreSet = new GameSet();
 
-                foreach (GameSet set in currentGenreList)
-                    genreSet.UnionWith(set);
-                if (genreSet.Count > 0)
-                    currentMatches.IntersectWith(genreSet);
-                return (currentMatches);
+            GameSet currentMatches = new GameSet();
+            currentMatches.UnionWith(AllGames);
+
+            foreach (GameSet set in currentGenreList)
+                genreSet.UnionWith(set);
+            if (genreSet.Count > 0)
+                currentMatches.IntersectWith(genreSet);
+           foreach (GameMedia gameMedia in media)
+            return (currentMatches);
         }
 
         public void ClearGenreCriteria()
@@ -131,6 +134,13 @@ namespace GameSelectorStarter
             List<GameSet> newList = new List<GameSet>(currentGenreList);
             newList.AddRange(GetGenreSetFromSelection(genreSet));
             currentGenreList = newList;
+        }
+        ///<summary>
+        /// Add a media to the game selector media variable
+        /// </summary>
+        public void AddMediaCriteria(GameMedia gameMedia)
+        {
+            media = gameMedia;
         }
 
         /// <summary>
@@ -182,7 +192,7 @@ namespace GameSelectorStarter
 
             foreach (GameGenre g in genreFlags)
             {
-                    list.Add(gameCriteria[g.ToString()]);
+                list.Add(gameCriteria[g.ToString()]);
             }
 
             return list;
